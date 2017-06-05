@@ -5,6 +5,8 @@ module.exports = function(app) {
     index: function(req, res) {
       var Blog = require('../model/blog');
       Blog.find().sort({updated_at: -1}).exec(function(err, data) {
+        if (err) return console.error(err);
+
         res.render('blog/index', {data: data});
       });
     },
