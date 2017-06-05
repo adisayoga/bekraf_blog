@@ -1,0 +1,39 @@
+{
+  "name": "bekraf_blog",
+  "version": "0.0.1",
+  "description": "Project akhir Bekraf membuat blog pribadi menggunakan node.js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adisayoga/bekraf_blog.git"
+  },
+  "keywords": [
+    "bekraf",
+    "blog",
+    "node",
+    "javascript",
+    "bootstrap",
+    "mongodb",
+    "passport.js"
+  ],
+  "author": "Adi Sayoga <adisayoga@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adisayoga/bekraf_blog/issues"
+  },
+  "homepage": "https://github.com/adisayoga/bekraf_blog#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.10.4",
+    "passport": "^0.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

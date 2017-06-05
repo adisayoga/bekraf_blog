@@ -1,0 +1,31 @@
+{
+  "name": "bekraf_blog",
+  "description": "Project akhir Bekraf membuat blog pribadi menggunakan node.js.",
+  "main": "app.js",
+  "authors": [
+    "Adi Sayoga <adisayoga@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bekraf",
+    "blog",
+    "node",
+    "javascript",
+    "bootstrap",
+    "mongodb",
+    "passport.js"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
