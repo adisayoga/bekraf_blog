@@ -22,7 +22,6 @@ module.exports = function(app) {
       var Blog = require('../model/blog');
       var data = {
         title:      req.body.title,
-        subtitle:   req.body.subtitle,
         body:       req.body.body,
         created_at: Date.now()
       };

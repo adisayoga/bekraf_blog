@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
   title: String,
-  subtitle: String,
   author: String,
   body: String,
   comments: [{ body: String, created_at: Date}],
