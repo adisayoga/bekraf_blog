@@ -11,8 +11,10 @@ module.exports = function(app) {
 
     view: function(req, res) {
       var Blog = require('../model/blog');
-      Blog.find(function(err, data) {
-        res.render('blog/view', {data: data});
+      Blog.findById(req.params.id, function(err, item) {
+        if (err) return console.error(err);
+
+        res.render('blog/view', {item: item});
       });
     },
 

@@ -1,5 +1,14 @@
 <%- include ../includes/header.ejs %>
 
 <div class="container">
-  <h1>View data</h1>
+  <section class="post">
+    <div class="post-header">
+      <div class="post-title"><%= item.title %></div>
+      <div class="post-date"><%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></div>
+    </div>
+
+    <div class="post-body">
+      <%= item.body %>
+    </div>
+  </section>
 </div>
