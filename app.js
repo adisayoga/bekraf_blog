@@ -1,14 +1,17 @@
 var express = require('express');
+var expressLayout = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var method = require('method-override');
 var app = express();
 
 // moddleware
+app.use(expressLayout);
 app.use(method('_method'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
 require('./routes')(app);
