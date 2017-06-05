@@ -54,7 +54,7 @@ module.exports = function(app) {
   /*
    * DELETE /blog/delete
    */
-  app.delete('/blog/delete', function(req, res) {
+  app.delete('/blog/delete/:id', function(req, res) {
 
   });
 

@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-require('./routes')(app);
+require('./src/routes')(app);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(err) {
