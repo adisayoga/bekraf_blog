@@ -1,61 +1,14 @@
+
 module.exports = function(app) {
+  var blog = require('./controllers/blogCtrl')(app);
 
-  /*
-   * GET /
-   */
-  app.get('/', function(req, res) {
-    res.redirect('/blog');
-  });
-
-  /*
-   * GET /blog
-   */
-  app.get('/blog', function(req, res) {
-    res.render('index');
-  });
-
-  /*
-   * GET /blog/:id
-   */
-  app.get('/blog/:id', function(req, res) {
-
-  });
-
-  // ------------------------------
-
-  /*
-   * GET /blog/create
-   */
-  app.get('/blog/create', function(req, res) {
-
-  });
-
-  /*
-   * POST /blog/create
-   */
-  app.post('/blog/create', function(req, res) {
-
-  });
-
-  /*
-   * GET /blog/update/:id
-   */
-  app.get('/blog/update/:id', function(req, res) {
-
-  });
-
-  /*
-   * PUT /blog/update/:id
-   */
-  app.put('/blog/update/:id', function(req, res) {
-
-  });
-
-  /*
-   * DELETE /blog/delete
-   */
-  app.delete('/blog/delete/:id', function(req, res) {
-
-  });
+  app.get    ('/',                 blog.index);
+  app.get    ('/blog',             blog.index);
+  app.get    ('/blog/create',      blog.insert);
+  app.post   ('/blog/create',      blog.saveInsert);
+  app.get    ('/blog/:id',         blog.view);
+  app.get    ('/blog/update/:id',  blog.update);
+  app.put    ('/blog/update/:id',  blog.saveUpdate);
+  app.delete ('/blog/delete/:id',  blog.delete);
 
 };

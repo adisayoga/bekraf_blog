@@ -5,22 +5,29 @@ var mongoose = require('mongoose');
 var method = require('method-override');
 var app = express();
 
-// moddleware
+// middleware
 app.use(expressLayout);
 app.use(method('_method'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
+// DB
+mongoose.connect('mongodb://localhost/blog');
+var db = mongoose.connection;
+db.on('error', function(err) {
+  console.error('Connection error: ' + err);
+});
+db.once('open', function() {
+  console.info('Database connected');
+});
+
 require('./src/routes')(app);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+  if (err) return console.error(err);
   console.log('Server started on http://127.0.0.1:' + port);
 });
