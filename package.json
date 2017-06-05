@@ -31,6 +31,7 @@
     "express": "^4.15.3",
     "express-ejs-layouts": "^2.3.0",
     "method-override": "^2.3.9",
+    "moment": "^2.18.1",
     "mongoose": "^4.10.4",
     "passport": "^0.3.2"
   },

@@ -2,7 +2,7 @@
 
 html, body, input, select, textarea {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 label {
@@ -19,4 +19,29 @@ label {
 .form-control {
   border-radius: 0;
   box-shadow: none;
+}
+
+.post {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  line-height: 1.75;
+}
+.post:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.post-header {
+  margin-bottom: 8px;
+}
+.post-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+.post-date {
+  color: #888;
+}
+.post .read-more {
+  display: block;
+  margin-top: 16px;
 }
