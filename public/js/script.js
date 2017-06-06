@@ -19,25 +19,24 @@
     });
     markdownConvert($markdownPreview);
 
+    // ______________________________
+    // Tambah spasi pada markdown preview jika menekan tombol tab
+
+    $('.markdown-preview textarea').on('keydown', function(e) {
+      if (e.keyCode !== 9) return; // Selain tab
+
+      e.preventDefault();
+
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+
+      var $this = $(this);
+      var value = $this.val();
+
+      $this.val(value.substring(0, start) + '  ' + value.substring(end));
+
+      this.selectionStart = this.selectionEnd = start + 2;
+    });
+
   });
-
-  // ______________________________
-  // Tambah spasi pada markdown preview jika menekan tombol tab
-
-  $('.markdown-preview textarea').on('keydown', function(e) {
-    if (e.keyCode !== 9) return; // Selain tab
-
-    e.preventDefault();
-
-    var start = this.selectionStart;
-    var end = this.selectionEnd;
-
-    var $this = $(this);
-    var value = $this.val();
-
-    $this.val(value.substring(0, start) + '  ' + value.substring(end));
-
-    this.selectionStart = this.selectionEnd = start + 2;
-  });
-
 })(jQuery, undefined);
