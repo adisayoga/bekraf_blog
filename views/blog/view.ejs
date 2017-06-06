@@ -3,10 +3,10 @@
 <div class="container">
   <section class="post">
     <div class="post-header">
-      <div class="post-title"><%= item.title %></div>
       <div class="post-meta">
-        <span class="post-date"><%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></span>
-        <span class="post-author"><%= item.author ? item.author.display_name : 'Anonymous' %></span>
+        <span class="post-date">Tanggal <%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></span>
+        <span class="post-author pull-right">Oleh <%= item.author ? item.author.display_name : 'Anonymous' %></span>
+      <div class="page-title"><%= item.title %></div>
       </div>
 
       <%if (user) { %>
@@ -25,5 +25,51 @@
     <div class="post-body markdown-output">
       <%- body_html %>
     </div>
+  </section>
+
+  <section class="post-comment">
+    <h2 class="post-comment-title">Comment</h2>
+
+    <form method="post" action="/blog/<%= item._id %>/comment" class="comment-form">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name" class="control-label">Your Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email" class="control-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="comment" class="control-label">Comment</label>
+            <textarea name="comment" id="comment" class="form-control" required></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+
+    <% if (item.comments.length) { %>
+      <div class="comments" id="comments">
+        <% item.comments.forEach(function(comment) { %>
+          <div class="comment-item">
+            <div class="comment-avatar"><i><%= comment.name.substr(0, 1).toUpperCase() %></i></div>
+            <div class="comment-body">
+              <div class="comment-author"><%= comment.name %></div>
+              <div class="comment-date"><%= comment.created_at.format('dddd, Mo MMMM Y HH:mm') %></div>
+              <div class="comment-text"><%= comment.comment %></div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <em>Belum ada comment</em>
+    <% } %>
+
   </section>
 </div>

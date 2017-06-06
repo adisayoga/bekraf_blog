@@ -51,15 +51,12 @@ code, kbd, pre, samp, .monospace {
 .post-meta {
   color: #888;
 }
-.post-date:after {
-  content: ',';
-}
-.post-author:before {
-  content: 'Oleh '
-}
 .post .read-more {
   display: block;
   margin-top: 16px;
+}
+.post-comment-title {
+  font-size: 18px;
 }
 
 .post-actions {
@@ -93,4 +90,41 @@ code, kbd, pre, samp, .monospace {
 .markdown-preview .markdown-input, .markdown-preview .markdown-output {
   flex: 1;
   margin-left: 16px;
+}
+
+.comment-form {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.comment-item {
+  margin-bottom: 16px;
+  display: flex;
+}
+.comment-avatar {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+  background: #2196F3;
+  text-align: center;
+}
+.comment-avatar > i {
+  color: #fff;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 6px;
+}
+.comment-author {
+  font-weight: 600;
+}
+.comment-date {
+  color: #888;
+}
+.comment-text {
+  margin-top: 8px;
 }
