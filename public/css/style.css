@@ -8,7 +8,13 @@ html, body, input, select, textarea {
 label {
   font-weight: 600;
 }
+body > .container {
+  margin-bottom: 32px;
+}
 
+.alert {
+  border-radius: 2px;
+}
 .page-title {
   font-size: 25px;
   font-weight: 200;
@@ -56,4 +62,25 @@ label {
 .post-actions > a {
   display: inline-block;
   margin-right: 16px;
+}
+
+.markdown-output h1 {
+  font-size: 18px;
+}
+.markdown-output h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.markdown-output h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.markdown-preview {
+  display: flex;
+  margin-left: -16px;
+}
+.markdown-preview .markdown-input, .markdown-preview .markdown-output {
+  flex: 1;
+  margin-left: 16px;
 }

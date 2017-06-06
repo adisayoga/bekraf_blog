@@ -33,7 +33,9 @@
     "method-override": "^2.3.9",
     "moment": "^2.18.1",
     "mongoose": "^4.10.4",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "remove-markdown": "^0.1.0",
+    "showdown": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

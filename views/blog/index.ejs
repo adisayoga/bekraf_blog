@@ -9,7 +9,7 @@
       </div>
 
       <div class="post-body">
-        <%= item.body.truncate(500) %>
+        <%= removeMarkdown(item.body).truncate(500) %>
 
         <a class="read-more" href="/blog/<%= item._id %>">Read more</a>
       </div>

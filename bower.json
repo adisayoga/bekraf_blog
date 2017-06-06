@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "showdown": "^1.7.1"
   }
 }
