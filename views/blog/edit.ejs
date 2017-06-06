@@ -1,17 +1,23 @@
 <%- include ../includes/header.ejs %>
 
-<div class="container">
-  <h1 class="page-title">Buat Blog Baru</h1>
+<% var hasItem = !!locals.item %>
 
-  <form method="post">
+<div class="container">
+  <h1 class="page-title"><%= hasItem ? 'Edit Blog' : 'Tulis Blog' %></h1>
+
+  <form method="post" action="<%= hasItem ? '/blog/edit/' + item._id + '?_method=PUT' : '/blog/create' %>">
+    <% if (hasItem) { %>
+      <input type="hidden" name="_method" value="put">
+    <% } %>
+
     <div class="form-group">
       <label for="title" class="control-label">Title</label>
-      <input type="text" name="title" id="title" class="form-control">
+      <input type="text" name="title" id="title" class="form-control" value="<%= hasItem ? item.title : '' %>">
     </div>
 
     <div class="form-group">
       <label for="body" class="control-label">Body</label>
-      <textarea name="body" id="body" rows="10" class="form-control"></textarea>
+      <textarea name="body" id="body" rows="10" class="form-control"><%= hasItem ? item.body : '' %></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
