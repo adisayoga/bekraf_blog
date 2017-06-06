@@ -2,11 +2,9 @@
 
 <% var hasItem = !!locals.item %>
 <% var emptyBody =
-       'A First Level Header\n' +
-       '====================\n' +
+       '# A First Level Header\n' +
        '\n' +
-       'A Second Level Header\n' +
-       '---------------------\n' +
+       '## A Second Level Header\n' +
        '\n' +
        'Now is the time for all good men to come to\n' +
        'the aid of their country. This is just a\n' +
@@ -30,7 +28,7 @@
 
     <div class="form-group">
       <label for="title" class="control-label">Title</label>
-      <input type="text" name="title" id="title" class="form-control" value="<%= hasItem ? item.title : 'Blog Title' %>">
+      <input type="text" name="title" id="title" class="form-control" value="<%= hasItem ? item.title : 'Blog Title' %>" required>
     </div>
 
     <div class="form-group">
@@ -39,7 +37,7 @@
         Body text ditulis dalam format markdown.
       </div>
       <div class="markdown-preview">
-        <textarea name="body" id="body" rows="25" class="form-control markdown-input"><%= hasItem ? item.body : emptyBody %></textarea>
+        <textarea name="body" id="body" rows="25" class="form-control markdown-input" required><%= hasItem ? item.body : emptyBody %></textarea>
         <div class="markdown-output"></div>
       </div>
     </div>
