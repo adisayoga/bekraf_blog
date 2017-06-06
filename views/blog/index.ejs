@@ -1,18 +1,22 @@
 <%- include ../includes/header.ejs %>
 
 <div class="container">
-  <% data.forEach(function(item) { %>
-    <section class="post">
-      <div class="post-header">
-        <div class="post-title"><%= item.title %></div>
-        <div class="post-date"><%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></div>
-      </div>
+  <% if (data.length) { %>
+    <% data.forEach(function(item) { %>
+      <section class="post">
+        <div class="post-header">
+          <div class="post-title"><%= item.title %></div>
+          <div class="post-date"><%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></div>
+        </div>
 
-      <div class="post-body">
-        <%= removeMarkdown(item.body).truncate(500) %>
+        <div class="post-body">
+          <%= removeMarkdown(item.body).truncate(500) %>
 
-        <a class="read-more" href="/blog/<%= item._id %>">Read more</a>
-      </div>
-    </section>
-  <% }) %>
+          <a class="read-more" href="/blog/<%= item._id %>">Read more</a>
+        </div>
+      </section>
+    <% }) %>
+  <% } else { %>
+    <div class="alert alert-info">Blog masih kosong. <a href="/blog/create">Buat Blog</a></div>
+  <% } %>
 </div>
