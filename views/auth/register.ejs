@@ -1,0 +1,29 @@
+<%- include ../includes/header.ejs %>
+
+<div class="container">
+  <h1 class="page-title">Register</h1>
+
+  <div class="alert alert-info">
+    Untuk kesederhanaan, data akan diupdate jika sudah ada user yang terdaftar.
+  </div>
+
+  <form method="post">
+    <div class="form-group">
+      <label class="control-label" for="username">Username:</label>
+      <input type="text" class="form-control" name="username" id="username" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="display_name">Display Name:</label>
+      <input type="text" class="form-control" name="display_name" id="display_name" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="password">Password:</label>
+      <input type="password" class="form-control" name="password" id="password" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+
+    <p>Sudah punya akun? <a href="/login">Login</a></p>
+  </form>
+</div>

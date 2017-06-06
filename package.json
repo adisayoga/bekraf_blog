@@ -26,14 +26,21 @@
   },
   "homepage": "https://github.com/adisayoga/bekraf_blog#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "express-ejs-layouts": "^2.3.0",
+    "express-session": "^1.15.3",
     "method-override": "^2.3.9",
     "moment": "^2.18.1",
     "mongoose": "^4.10.4",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "remove-markdown": "^0.1.0",
+    "showdown": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
