@@ -23,6 +23,11 @@ app.use(passport.session());
 
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+  res.locals.user = req.user ? req.user : null;
+  next();
+});
+
 // DB
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/blog');
