@@ -7,8 +7,13 @@
       <div class="post-date"><%= item.created_at.format('dddd, Mo MMMM Y HH:mm') %></div>
 
       <div class="post-actions">
-        <a href="/blog/edit/<%= item._id %>"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-        <a href="/blog/delete/<%= item._id %>"><i class="glyphicon glyphicon-remove"></i> Delete</a>
+        <a href="/blog/edit/<%= item._id %>">
+          <i class="glyphicon glyphicon-pencil"></i> Edit
+        </a>
+
+        <a href="/blog/delete/<%= item._id %>" onclick="return confirm('Yakin menghapus &quot;<%= item.title %>&quot;?')">
+          <i class="glyphicon glyphicon-remove"></i> Delete
+        </a>
       </div>
     </div>
 
