@@ -19,8 +19,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
           <li><a href="#"><%= user.display_name %></a></li>
+          <li><a href="/logout">Logout</a></li>
         <% } else { %>
-          <li><a href="/login">Login</a></li>
+        <li><a href="/login">Login</a></li>
         <% } %>
       </ul>
     </div>
