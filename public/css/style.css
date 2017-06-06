@@ -45,3 +45,15 @@ label {
   display: block;
   margin-top: 16px;
 }
+
+.post-actions {
+  padding: 8px 16px;
+  margin: 8px 0;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.post-actions > a {
+  display: inline-block;
+  margin-right: 16px;
+}
