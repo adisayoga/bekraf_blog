@@ -20,7 +20,12 @@
       <textarea name="body" id="body" rows="10" class="form-control"><%= hasItem ? item.body : '' %></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="<%= hasItem ? '/blog/' + item._id : '/blog' %>" class="btn btn-default">
+      <i class="glyphicon glyphicon-arrow-left"></i> Kembali
+    </a>
+    <button type="submit" class="btn btn-primary">
+      <i class="glyphicon glyphicon-ok"></i> Submit
+    </button>
 
   </form>
 </div>
