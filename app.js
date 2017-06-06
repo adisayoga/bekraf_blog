@@ -26,7 +26,7 @@ db.once('open', function() {
   console.info('Database connected');
 });
 
-require('./app/routes')(app);
+require('./lib/routes')(app);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(err) {
