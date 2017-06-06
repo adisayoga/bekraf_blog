@@ -27,9 +27,6 @@
   <h1 class="page-title"><%= hasItem ? 'Edit Blog' : 'Tulis Blog' %></h1>
 
   <form method="post" action="<%= hasItem ? '/blog/edit/' + item._id + '?_method=PUT' : '/blog/create' %>">
-    <% if (hasItem) { %>
-      <input type="hidden" name="_method" value="put">
-    <% } %>
 
     <div class="form-group">
       <label for="title" class="control-label">Title</label>
