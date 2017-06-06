@@ -48,8 +48,14 @@ code, kbd, pre, samp, .monospace {
   font-weight: 400;
   font-size: 20px;
 }
-.post-date {
+.post-meta {
   color: #888;
+}
+.post-date:after {
+  content: ',';
+}
+.post-author:before {
+  content: 'Oleh '
 }
 .post .read-more {
   display: block;
