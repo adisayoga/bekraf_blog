@@ -22,9 +22,9 @@
   });
 
   // ______________________________
-  // Tambah spasi pada textarea jika menekan tombol tab
+  // Tambah spasi pada markdown preview jika menekan tombol tab
 
-  $('textarea').on('keydown', function(e) {
+  $('.markdown-preview textarea').on('keydown', function(e) {
     if (e.keyCode !== 9) return; // Selain tab
 
     e.preventDefault();
